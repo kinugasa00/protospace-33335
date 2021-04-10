@@ -9,6 +9,7 @@
 | occupation | text   | null: false |
 | position   | text   | null: false |
 
+
 ## prototypes テーブル
 
 | Column      | Type       | Options                        |
