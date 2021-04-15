@@ -4,7 +4,7 @@
       <h2 class="prototype-heading">
         <%= @prototype.title %>
       </h2>
-      <%= link to " #{@prototype.user.name}さんの情報",user_path(@prototype.user), class: :prototype__user %>
+      <%= link_to " #{@prototype.user.name}さんの情報",user_path(@prototype.user), class: :prototype__user %>
       <% if current_user == @prototype.user%>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>

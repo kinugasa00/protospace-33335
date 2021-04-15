@@ -1,16 +1,11 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_prototype, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
-    @prototype = Prototype.includes(:user)
+    @prototype = Prototype.all.includes(:user)
   end
-
-
-  # def title_params
-  #   params.require(:title).permit(:content, :image).merge(user_id: current_user.id)
-  # end
 
   def new
    @prototype = Prototype.new
@@ -41,6 +36,11 @@ class PrototypesController < ApplicationController
 
   def edit
     # @prototype = Prototype.find(params[:id])
+    # if @prototype.user_id == current_user.id
+    #   render :edit
+    # else
+    #   redirect_to root_path 
+    # end
   end
 
 
